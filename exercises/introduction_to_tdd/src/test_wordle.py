@@ -1,5 +1,3 @@
-import pytest
-
 """Example Python Test
 
 def test_description_of_the_test():
@@ -8,22 +6,13 @@ def test_description_of_the_test():
 """
 
 
-@pytest.mark.todo
-def test_evaluate_guess_includes_dash_for_letters_not_in_the_answer():
-    pass
+# def test_evaluate_guess_includes_dash_for_letters_not_in_the_answer():
 
 
-@pytest.mark.todo
-def test_evaluate_guess_returns_all_g_for_the_correct_answer():
-    pass
+# def test_evaluate_guess_returns_all_g_for_the_correct_answer():
 
 
-@pytest.mark.todo
-def test_evaluate_guess_includes_g_for_one_correct_letter_in_correct_position():
-    pass
+# def test_evaluate_guess_includes_g_for_one_correct_letter_in_correct_position():
 
 
-@pytest.mark.todo
-def test_evaluate_guess_includes_o_for_one_correct_letter_in_the_wrong_position():
-    pass
-
+# def test_evaluate_guess_includes_o_for_one_correct_letter_in_the_wrong_position():
