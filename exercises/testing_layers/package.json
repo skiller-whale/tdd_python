@@ -1,0 +1,18 @@
+{
+  "name": "experiment",
+  "module": "bin/serve.py",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test:unit:core": "python -m pytest tests/core -v",
+    "test:server": "python -m pytest tests/test_server.py -v",
+    "test:system": "python -m pytest tests/test_game.py -v",
+    "test:all:watch": "bun install && run-run-run --watch-file-extensions=py 'bun run test:unit:core' 'bun run test:server' 'bun run test:system'",
+    "test": "bun install && bun run test:unit:core && bun run test:server && bun run test:system",
+    "start": "python bin/serve.py"
+  },
+  "devDependencies": {
+    "@nowprototypeit/run-run-run": "github:nowprototypeit/run-run-run#f429f4d",
+    "playwright": "^1.52.0"
+  }
+}

@@ -1,0 +1,27 @@
+services:
+  dev-server:
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    ports:
+      - "3001:3001"
+    volumes:
+      - "./bin:/exercises/bin"
+      - "./src:/exercises/src"
+      - "./requirements.txt:/exercises/requirements.txt"
+      - "./package.json:/exercises/package.json"
+    working_dir: "/exercises"
+    command: ["python", "bin/serve.py"]
+    init: true # to ensure signal handling works (and you can kill the container with ctrl-c)
+  tests:
+    build:
+      context: "."
+      dockerfile: "Dockerfile"
+    volumes:
+      - "./src:/exercises/src"
+      - "./tests:/exercises/tests"
+      - "./requirements.txt:/exercises/requirements.txt"
+      - "./package.json:/exercises/package.json"
+    working_dir: "/exercises"
+    entrypoint: ["bun", "run", "test:all:watch"]
+    init: true # to ensure signal handling works (and you can kill the container with ctrl-c)
