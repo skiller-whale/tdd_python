@@ -1,0 +1,1 @@
+"""Wordle Stats CLI package."""

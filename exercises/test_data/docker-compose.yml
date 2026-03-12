@@ -1,0 +1,26 @@
+services:
+  tests:
+    image: python:3.11-alpine
+    volumes:
+      - ./src:/exercises/src
+      - ./tests:/exercises/tests
+      - ./requirements.txt:/exercises/requirements.txt
+      - ./pyproject.toml:/exercises/pyproject.toml
+    working_dir: /exercises
+    environment:
+      - PYTHONPATH=/exercises
+    command: sh -c "pip install -q -r requirements.txt && ptw --poll tests/ -- -v"
+    init: true # to ensure signal handling works (and you can kill the container with ctrl-c)
+  cli:
+    image: python:3.11-alpine
+    volumes:
+      - ./bin:/exercises/bin
+      - ./data:/exercises/data
+      - ./src:/exercises/src
+      - ./requirements.txt:/exercises/requirements.txt
+      - ./pyproject.toml:/exercises/pyproject.toml
+    working_dir: /exercises
+    environment:
+      - PYTHONPATH=/exercises
+    command: ["sh"]
+    init: true # to ensure signal handling works (and you can kill the container with ctrl-c)

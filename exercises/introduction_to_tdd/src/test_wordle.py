@@ -15,4 +15,4 @@ def test_description_of_the_test():
 # def test_evaluate_guess_includes_g_for_one_correct_letter_in_correct_position():
 
 
-# def test_evaluate_guess_includes_o_for_one_correct_letter_in_the_wrong_position():
+# def test_evaluate_guess_includes_y_for_one_correct_letter_in_the_wrong_position():
