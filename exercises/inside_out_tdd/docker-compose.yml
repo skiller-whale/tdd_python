@@ -7,6 +7,9 @@ services:
       - /bin/sh
     volumes:
       - ./:/inside_out_tdd
+      - python_inside_out_pytest_cache:/inside_out_tdd/.pytest_cache
+      - python_inside_out_src_pycache:/inside_out_tdd/src/__pycache__
+      - python_inside_out_tests_pycache:/inside_out_tdd/tests/__pycache__
     working_dir: /inside_out_tdd
     tty: true
     command:
@@ -19,3 +22,8 @@ services:
         echo "Or for watch mode:"
         echo "  ptw -- -q"
         exec /bin/sh -l
+
+volumes:
+  python_inside_out_pytest_cache:
+  python_inside_out_src_pycache:
+  python_inside_out_tests_pycache:
