@@ -24,6 +24,9 @@ services:
     <<: *exercise
     volumes:
       - ./exercises/introduction_to_tdd:/introduction_to_tdd
+      - introduction_to_tdd_pytest_cache:/introduction_to_tdd/.pytest_cache
+      - introduction_to_tdd_src_pycache:/introduction_to_tdd/src/__pycache__
+      - introduction_to_tdd_tests_pycache:/introduction_to_tdd/tests/__pycache__
     working_dir: /introduction_to_tdd
     environment:
       - PYTHONPATH=/introduction_to_tdd
@@ -32,6 +35,9 @@ services:
     <<: *exercise
     volumes:
       - ./exercises/specifying_behaviour:/specifying_behaviour
+      - specifying_behaviour_pytest_cache:/specifying_behaviour/.pytest_cache
+      - specifying_behaviour_src_pycache:/specifying_behaviour/src/__pycache__
+      - specifying_behaviour_tests_pycache:/specifying_behaviour/tests/__pycache__
     working_dir: /specifying_behaviour
     environment:
       - PYTHONPATH=/specifying_behaviour
@@ -40,6 +46,34 @@ services:
     <<: *exercise
     volumes:
       - ./exercises/failing_well:/failing_well
+      - failing_well_pytest_cache:/failing_well/.pytest_cache
+      - failing_well_src_pycache:/failing_well/src/__pycache__
+      - failing_well_tests_pycache:/failing_well/tests/__pycache__
     working_dir: /failing_well
     environment:
       - PYTHONPATH=/failing_well
+
+  inside_out_tdd:
+    <<: *exercise
+    volumes:
+      - ./exercises/inside_out_tdd:/inside_out_tdd
+      - inside_out_tdd_pytest_cache:/inside_out_tdd/.pytest_cache
+      - inside_out_tdd_src_pycache:/inside_out_tdd/src/__pycache__
+      - inside_out_tdd_tests_pycache:/inside_out_tdd/tests/__pycache__
+    working_dir: /inside_out_tdd
+    environment:
+      - PYTHONPATH=/inside_out_tdd
+
+volumes:
+  introduction_to_tdd_pytest_cache:
+  introduction_to_tdd_src_pycache:
+  introduction_to_tdd_tests_pycache:
+  specifying_behaviour_pytest_cache:
+  specifying_behaviour_src_pycache:
+  specifying_behaviour_tests_pycache:
+  failing_well_pytest_cache:
+  failing_well_src_pycache:
+  failing_well_tests_pycache:
+  inside_out_tdd_pytest_cache:
+  inside_out_tdd_src_pycache:
+  inside_out_tdd_tests_pycache:

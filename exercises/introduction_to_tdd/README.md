@@ -1,4 +1,4 @@
-# Inside-Out TDD: Exercises
+# Introduction to TDD: Exercises
 
 ## Run tests once
 
@@ -10,10 +10,4 @@ pytest tests
 
 ```bash
 ptw tests
-```
-
-## Run wordle-cheat
-
-```bash
-./wordle-cheat _H___ FTH RYIASKC
 ```
