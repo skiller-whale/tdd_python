@@ -1,0 +1,11 @@
+services:
+  tests:
+    build: .
+    volumes:
+      - ./src:/exercises/src
+      - ./tests:/exercises/tests
+    working_dir: /exercises
+    environment:
+      - PYTHONPATH=/exercises
+    command: ["pytest", "tests"]
+    init: true # to ensure signal handling works (and you can kill the container with ctrl-c)
