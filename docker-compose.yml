@@ -35,3 +35,11 @@ services:
     working_dir: /specifying_behaviour
     environment:
       - PYTHONPATH=/specifying_behaviour
+
+  failing_well:
+    <<: *exercise
+    volumes:
+      - ./exercises/failing_well:/failing_well
+    working_dir: /failing_well
+    environment:
+      - PYTHONPATH=/failing_well
