@@ -1,3 +1,8 @@
+x-exercise: &exercise
+  build:
+    context: .
+  entrypoint: /bin/sh
+
 services:
   sync:
     image: "ghcr.io/skiller-whale/learnersync:0.2.1"
@@ -14,8 +19,19 @@ services:
       - ./attendance_id:/attendance_id:ro
     tty: true
     stdin_open: true
-  python:
-    build:
-      context: .
+
+  introduction_to_tdd:
+    <<: *exercise
     volumes:
-      - ./exercises:/exercises
+      - ./exercises/introduction_to_tdd:/introduction_to_tdd
+    working_dir: /introduction_to_tdd
+    environment:
+      - PYTHONPATH=/introduction_to_tdd
+
+  specifying_behaviour:
+    <<: *exercise
+    volumes:
+      - ./exercises/specifying_behaviour:/specifying_behaviour
+    working_dir: /specifying_behaviour
+    environment:
+      - PYTHONPATH=/specifying_behaviour
