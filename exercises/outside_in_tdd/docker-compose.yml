@@ -1,0 +1,29 @@
+name: python_outside_in_tdd
+
+services:
+  exercises:
+    build: .
+    entrypoint:
+      - /bin/sh
+    volumes:
+      - ./:/outside_in_tdd
+      - python_outside_in_pytest_cache:/outside_in_tdd/.pytest_cache
+      - python_outside_in_src_pycache:/outside_in_tdd/src/__pycache__
+      - python_outside_in_tests_pycache:/outside_in_tdd/tests/__pycache__
+    working_dir: /outside_in_tdd
+    tty: true
+    command:
+      - -c
+      - |
+        echo 'export PS1="🐳 \033[1;32m\u@\033[1;34m\w\033[0m \$ "' >> /root/.profile
+        echo 'trap "echo ‼️ You just quit the exercises terminal.; echo To get it back run: docker compose run exercises" EXIT' >> /root/.profile
+        echo "To run the tests:"
+        echo "  pytest -q"
+        echo "Or for watch mode:"
+        echo "  ptw -- -q"
+        exec /bin/sh -l
+
+volumes:
+  python_outside_in_pytest_cache:
+  python_outside_in_src_pycache:
+  python_outside_in_tests_pycache:
