@@ -1,4 +1,4 @@
-# wordle-cheat (Python + pytest)
+# Test Data: Exercises
 
 ## Run tests once
 
@@ -12,8 +12,8 @@ pytest tests
 ptw tests
 ```
 
-## Run wordle-cheat
+## Run wordle-stats
 
 ```bash
-./wordle-cheat _H___ FTH RYIASKC
+./wordle-stats
 ```
