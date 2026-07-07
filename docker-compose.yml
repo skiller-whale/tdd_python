@@ -63,6 +63,17 @@ services:
     working_dir: /inside_out_tdd
     environment:
       - PYTHONPATH=/inside_out_tdd
+  
+  outside_in_tdd:
+    <<: *exercise
+    volumes:
+      - ./exercises/outside_in_tdd:/outside_in_tdd
+      - outside_in_tdd_pytest_cache:/outside_in_tdd/.pytest_cache
+      - outside_in_tdd_src_pycache:/outside_in_tdd/src/__pycache__
+      - outside_in_tdd_tests_pycache:/outside_in_tdd/tests/__pycache__
+    working_dir: /outside_in_tdd
+    environment:
+      - PYTHONPATH=/outside_in_tdd
 
 volumes:
   introduction_to_tdd_pytest_cache:
@@ -77,3 +88,6 @@ volumes:
   inside_out_tdd_pytest_cache:
   inside_out_tdd_src_pycache:
   inside_out_tdd_tests_pycache:
+  outside_in_tdd_pytest_cache:
+  outside_in_tdd_src_pycache:
+  outside_in_tdd_tests_pycache:
