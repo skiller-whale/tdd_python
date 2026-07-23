@@ -5,7 +5,7 @@ x-exercise: &exercise
 
 services:
   sync:
-    image: "ghcr.io/skiller-whale/learnersync:0.2.7"
+    image: "ghcr.io/skiller-whale/learnersync:0.2.8"
     network_mode: "host"
     environment:
       SERVER_URL: "https://train.skillerwhale.com/"
@@ -63,7 +63,7 @@ services:
     working_dir: /inside_out_tdd
     environment:
       - PYTHONPATH=/inside_out_tdd
-  
+
   outside_in_tdd:
     <<: *exercise
     volumes:
