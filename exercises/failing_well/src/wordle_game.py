@@ -1,5 +1,5 @@
-from evaluate_guess import evaluate_guess
-from validate_guess import validate_guess
+from src.evaluate_guess import evaluate_guess
+from src.validate_guess import validate_guess
 
 
 class WordleGame:
@@ -28,7 +28,7 @@ class WordleGame:
 
         result = validate_guess(guess, self.word_list)
         if not result["valid"]:
-            raise ValueError(result.get("error"))
+            raise ValueError(result["reason"])
 
         evaluation = evaluate_guess(guess, self.correct_answer)
         self.guesses.append(guess)

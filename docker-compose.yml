@@ -75,6 +75,74 @@ services:
     environment:
       - PYTHONPATH=/outside_in_tdd
 
+  test_data:
+    <<: *exercise
+    volumes:
+      - ./exercises/test_data:/test_data
+      - test_data_pytest_cache:/test_data/.pytest_cache
+      - test_data_src_pycache:/test_data/src/__pycache__
+      - test_data_tests_pycache:/test_data/tests/__pycache__
+      # `./wordle-stats` runs `python -m bin.wordle_stats`, so bin/ is imported too
+      - test_data_bin_pycache:/test_data/bin/__pycache__
+    working_dir: /test_data
+    environment:
+      - PYTHONPATH=/test_data
+
+  legacy_code_sorting:
+    <<: *exercise
+    volumes:
+      - ./exercises/legacy_code/sorting:/sorting
+      - legacy_code_sorting_pytest_cache:/sorting/.pytest_cache
+      - legacy_code_sorting_src_pycache:/sorting/src/__pycache__
+      - legacy_code_sorting_tests_pycache:/sorting/tests/__pycache__
+    working_dir: /sorting
+    environment:
+      - PYTHONPATH=/sorting
+
+  legacy_code_shop:
+    <<: *exercise
+    volumes:
+      - ./exercises/legacy_code/shop:/shop
+      - legacy_code_shop_pytest_cache:/shop/.pytest_cache
+      - legacy_code_shop_src_pycache:/shop/src/__pycache__
+      - legacy_code_shop_tests_pycache:/shop/tests/__pycache__
+    working_dir: /shop
+    environment:
+      - PYTHONPATH=/shop
+
+  legacy_code_ai_shop:
+    <<: *exercise
+    volumes:
+      - ./exercises/legacy_code/ai_shop:/ai_shop
+      - legacy_code_ai_shop_pytest_cache:/ai_shop/.pytest_cache
+      - legacy_code_ai_shop_src_pycache:/ai_shop/src/__pycache__
+      - legacy_code_ai_shop_tests_pycache:/ai_shop/tests/__pycache__
+    working_dir: /ai_shop
+    environment:
+      - PYTHONPATH=/ai_shop
+
+  advanced_testing_mutation:
+    <<: *exercise
+    volumes:
+      - ./exercises/advanced_testing/mutation:/mutation
+      - advanced_testing_mutation_pytest_cache:/mutation/.pytest_cache
+      - advanced_testing_mutation_pycache:/mutation/bun_and_board/__pycache__
+      - advanced_testing_mutation_tests_pycache:/mutation/tests/__pycache__
+    working_dir: /mutation
+    environment:
+      - PYTHONPATH=/mutation
+
+  advanced_testing_pbt:
+    <<: *exercise
+    volumes:
+      - ./exercises/advanced_testing/pbt:/pbt
+      - advanced_testing_pbt_pytest_cache:/pbt/.pytest_cache
+      - advanced_testing_pbt_pycache:/pbt/merge_sort/__pycache__
+      - advanced_testing_pbt_tests_pycache:/pbt/tests/__pycache__
+    working_dir: /pbt
+    environment:
+      - PYTHONPATH=/pbt
+
 volumes:
   introduction_to_tdd_pytest_cache:
   introduction_to_tdd_src_pycache:
@@ -91,3 +159,22 @@ volumes:
   outside_in_tdd_pytest_cache:
   outside_in_tdd_src_pycache:
   outside_in_tdd_tests_pycache:
+  test_data_pytest_cache:
+  test_data_src_pycache:
+  test_data_tests_pycache:
+  test_data_bin_pycache:
+  legacy_code_sorting_pytest_cache:
+  legacy_code_sorting_src_pycache:
+  legacy_code_sorting_tests_pycache:
+  legacy_code_shop_pytest_cache:
+  legacy_code_shop_src_pycache:
+  legacy_code_shop_tests_pycache:
+  legacy_code_ai_shop_pytest_cache:
+  legacy_code_ai_shop_src_pycache:
+  legacy_code_ai_shop_tests_pycache:
+  advanced_testing_mutation_pytest_cache:
+  advanced_testing_mutation_pycache:
+  advanced_testing_mutation_tests_pycache:
+  advanced_testing_pbt_pytest_cache:
+  advanced_testing_pbt_pycache:
+  advanced_testing_pbt_tests_pycache:

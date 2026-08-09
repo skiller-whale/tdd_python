@@ -1,3 +1,3 @@
 FROM python:3.12-alpine
 
-RUN pip install pytest pytest-watch
+RUN pip install pytest pytest-watch hypothesis mutmut
