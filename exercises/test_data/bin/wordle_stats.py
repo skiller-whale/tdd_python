@@ -19,13 +19,13 @@ with open(data_path, "r", encoding="utf-8") as f:
 # Helper: Get unique player names
 def get_player_names():
     """Returns a list of unique player names from game results."""
-    return list(set(r["playerName"] for r in game_results))
+    return list(set(r["player_name"] for r in game_results))
 
 
 # Helper: Get games for a specific player
 def get_player_games(player_name):
     """Returns all game results for a specific player."""
-    return [r for r in game_results if r["playerName"] == player_name]
+    return [r for r in game_results if r["player_name"] == player_name]
 
 
 # Command implementations
@@ -47,10 +47,10 @@ def show_player_stats(player_name):
 
     stats = calculate_player_stats(player_games)
     print(f"\n=== Stats for {player_name} ===\n")
-    print(f"Games Played: {stats['gamesPlayed']}")
-    print(f"Games Won: {stats['gamesWon']}")
-    print(f"Win Rate: {stats['winRate'] * 100:.1f}%")
-    print(f"Average Attempts: {stats['averageAttempts']:.1f}\n")
+    print(f"Games Played: {stats['games_played']}")
+    print(f"Games Won: {stats['games_won']}")
+    print(f"Win Rate: {stats['win_rate'] * 100:.1f}%")
+    print(f"Average Attempts: {stats['average_attempts']:.1f}\n")
 
 
 def show_player_report(player_name):
@@ -62,11 +62,11 @@ def show_player_report(player_name):
 
     stats = calculate_player_stats(player_games)
     all_player_stats = [
-        {"playerName": name, **calculate_player_stats(get_player_games(name))}
+        {"player_name": name, **calculate_player_stats(get_player_games(name))}
         for name in get_player_names()
     ]
-    ranked = rank_players(all_player_stats, sort_by="winRate", order="desc")
-    player_rank = next(p for p in ranked if p["playerName"] == player_name)
+    ranked = rank_players(all_player_stats, sort_by="win_rate", order="desc")
+    player_rank = next(p for p in ranked if p["player_name"] == player_name)
 
     # Calculate additional stats
     wins = [g for g in player_games if g["guesses"][-1] == g["answer"]]
@@ -76,26 +76,26 @@ def show_player_report(player_name):
 
     # Generate sample achievements
     achievements = []
-    if stats["winRate"] == 1.0:
+    if stats["win_rate"] == 1.0:
         achievements.append("Perfect Record")
     if fastest_win == 1:
         achievements.append("Hole-in-One")
-    if stats["gamesPlayed"] >= 5:
+    if stats["games_played"] >= 5:
         achievements.append("Dedicated Player")
-    if stats["averageAttempts"] < 3:
+    if stats["average_attempts"] < 3:
         achievements.append("Speed Solver")
 
     report = generate_player_report({
-        "playerId": f"player-{player_name.lower()}",
+        "player_id": f"player-{player_name.lower()}",
         "email": f"{player_name.lower()}@example.com",
-        "playerName": player_name,
-        "gamesPlayed": stats["gamesPlayed"],
-        "gamesWon": stats["gamesWon"],
-        "winRate": stats["winRate"],
-        "averageAttempts": stats["averageAttempts"],
-        "fastestWin": fastest_win,
-        "firstPlayed": dates[0],
-        "lastPlayed": dates[-1],
+        "player_name": player_name,
+        "games_played": stats["games_played"],
+        "games_won": stats["games_won"],
+        "win_rate": stats["win_rate"],
+        "average_attempts": stats["average_attempts"],
+        "fastest_win": fastest_win,
+        "first_played": dates[0],
+        "last_played": dates[-1],
         "rank": player_rank["rank"],
         "percentile": percentile,
         "achievements": achievements,
@@ -104,12 +104,12 @@ def show_player_report(player_name):
     print("\n" + report + "\n")
 
 
-def rank_players(player_stats_list, sort_by="winRate", order="desc"):
+def rank_players(player_stats_list, sort_by="win_rate", order="desc"):
     """Ranks players based on a specific stat.
     
     Args:
         player_stats_list: List of player stats dictionaries
-        sort_by: Key to sort by (default: "winRate")
+        sort_by: Key to sort by (default: "win_rate")
         order: Sort order "asc" or "desc" (default: "desc")
     
     Returns:

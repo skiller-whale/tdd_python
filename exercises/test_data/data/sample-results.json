@@ -1,132 +1,132 @@
 [
   {
-    "playerName": "Alice",
+    "player_name": "Alice",
     "answer": "whale",
     "guesses": ["crane", "slate", "whale"],
     "date": "2026-02-01"
   },
   {
-    "playerName": "Alice",
+    "player_name": "Alice",
     "answer": "flint",
     "guesses": ["crane", "stilt", "flint"],
     "date": "2026-02-02"
   },
   {
-    "playerName": "Alice",
+    "player_name": "Alice",
     "answer": "grape",
     "guesses": ["crane", "grape"],
     "date": "2026-02-03"
   },
   {
-    "playerName": "Alice",
+    "player_name": "Alice",
     "answer": "quirk",
     "guesses": ["crane", "stilt", "plumb", "vigor", "quirk"],
     "date": "2026-02-04"
   },
   {
-    "playerName": "Alice",
+    "player_name": "Alice",
     "answer": "brine",
     "guesses": ["crane", "brine"],
     "date": "2026-02-05"
   },
   {
-    "playerName": "Alice",
+    "player_name": "Alice",
     "answer": "plumb",
     "guesses": ["crane", "stilt", "plumb"],
     "date": "2026-02-06"
   },
   {
-    "playerName": "Alice",
+    "player_name": "Alice",
     "answer": "vivid",
     "guesses": ["crane", "stilt", "plumb", "vigor", "kayak", "vivid"],
     "date": "2026-02-07"
   },
   {
-    "playerName": "Bob",
+    "player_name": "Bob",
     "answer": "whale",
     "guesses": ["adieu", "story", "whale"],
     "date": "2026-02-01"
   },
   {
-    "playerName": "Bob",
+    "player_name": "Bob",
     "answer": "flint",
     "guesses": ["adieu", "story", "clamp", "flint"],
     "date": "2026-02-02"
   },
   {
-    "playerName": "Bob",
+    "player_name": "Bob",
     "answer": "grape",
     "guesses": ["adieu", "story", "clamp", "brine", "grape"],
     "date": "2026-02-03"
   },
   {
-    "playerName": "Bob",
+    "player_name": "Bob",
     "answer": "quirk",
     "guesses": ["adieu", "story", "clamp", "brine", "monks", "plumb"],
     "date": "2026-02-04"
   },
   {
-    "playerName": "Bob",
+    "player_name": "Bob",
     "answer": "brine",
     "guesses": ["adieu", "brine"],
     "date": "2026-02-05"
   },
   {
-    "playerName": "Bob",
+    "player_name": "Bob",
     "answer": "plumb",
     "guesses": ["adieu", "story", "clamp", "plumb"],
     "date": "2026-02-06"
   },
   {
-    "playerName": "Charlie",
+    "player_name": "Charlie",
     "answer": "whale",
     "guesses": ["whale"],
     "date": "2026-02-01"
   },
   {
-    "playerName": "Charlie",
+    "player_name": "Charlie",
     "answer": "flint",
     "guesses": ["crane", "stilt", "plumb", "vigor", "kayak", "monks"],
     "date": "2026-02-02"
   },
   {
-    "playerName": "Charlie",
+    "player_name": "Charlie",
     "answer": "grape",
     "guesses": ["crane", "grape"],
     "date": "2026-02-03"
   },
   {
-    "playerName": "Charlie",
+    "player_name": "Charlie",
     "answer": "quirk",
     "guesses": ["crane", "stilt", "plumb", "vigor", "kayak", "monks"],
     "date": "2026-02-04"
   },
   {
-    "playerName": "Charlie",
+    "player_name": "Charlie",
     "answer": "brine",
     "guesses": ["crane", "brine"],
     "date": "2026-02-05"
   },
   {
-    "playerName": "Dana",
+    "player_name": "Dana",
     "answer": "whale",
     "guesses": ["crane", "stilt", "plumb", "whale"],
     "date": "2026-02-01"
   },
   {
-    "playerName": "Dana",
+    "player_name": "Dana",
     "answer": "flint",
     "guesses": ["crane", "flint"],
     "date": "2026-02-02"
   },
   {
-    "playerName": "Dana",
+    "player_name": "Dana",
     "answer": "grape",
     "guesses": ["crane", "grape"],
     "date": "2026-02-03"
   },
   {
-    "playerName": "Dana",
+    "player_name": "Dana",
     "answer": "quirk",
     "guesses": ["crane", "stilt", "quirk"],
     "date": "2026-02-04"
